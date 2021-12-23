@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap & Font Awesome-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/952a466f52.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tutorial.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Header-->
+    <header class="d-flex flex-column justify-content-end">
+        <div class="header-gradient"></div> <a href="../index.html" id="logo"><img src="../images/xali.png" alt="logo"
+                class="mx-auto  mw-100"></a>
+    </header>
+    <!--Header-->
+    <!--Nav-->
+    <nav class="navbar navbar-expand-lg sticky-top shadow bg-light navbar-light">
+        <div class="container-fluid"> <a class="navbar-brand" href="../index.html"
+                style="font-weight: 800; color: #6b6e70;">HOME</a> <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#"> <i
+                                class="fa fa-angle-up fa-lg" aria-hidden="true" style="color: #6b6e70;"></i> </a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="./resourcepack.html">Resourcepack</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Datapack</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="./tutorial.html">Tutorial</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
+                </ul>
+                <!-- Button trigger modal -->
+                <button type="button" class="button button-sm" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">About</button>
+                <!-- Button trigger modal -->
+            </div>
+        </div>
+    </nav>
+    <!--Nav-->
+
+    <main>
+        <section id="tutorial">
+            <div class="text-center mb-4 mt-5">
+                <h1>How to create a Java resource pack</h1>
+                <span class="subheader">Beginner guide</span>
+            </div>
+
+            <p> Hello everyone! Some of you might know me and some of you might not, but I've been creating resource
+                packs for some times now and got some popular ones you might have seen. I mostly focus on optifine
+                because of all the possibilities it gives the user and the creator, but I have also looked a lot into
+                what was possible to do with other mods or plugins.
+            </p>
+            <p> In this guide, I'm gonna try to make it as simple as possible to create a texture pack template for you
+                to download and use. I'll also give you some good practice to have when you create texture packs, to
+                help you get more traction on your pack and make them compatible with other packs. This guide is really
+                aiming at the beginner while being the most extensive possible. I will use spoilers to hide some
+                information that might be more advance or unnecessary to some of you to keep the guide short.
+            </p>
+            <div class="accordion" id="accordion-verion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-1"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true"
+                            aria-controls="collapse-1"> This tutorial is for 1.13+ </button> </h2>
+                    <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1"
+                        data-bs-parent="#accordion-version">
+                        <div class="accordion-body">
+                            <p> This tutorial is for 1.13+ so if you are using 1.12 and before there might be some
+                                changes you have to do for your pack to work properly. Since 1.13, not much has changed
+                                except the pack version and some texture names. If your resource pack is missing a
+                                texture that you should not, it might be one of the reason. For 1.12 and before, one of
+                                the big issues is that the blockstates and models didn't have the same layout. There is
+                                also Optifine that was McPatcher with some things that were different and less powerful
+                                at the time, so some new stuff might not work properly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p> Before we start, if what you want is to simply install an existing resource pack, you can read this
+                extensive <a
+                    href="https://www.planetminecraft.com/blog/how-to-install-minecraft-texture-packs-4615399/">tutorial</a>
+                by PMC Don't want to follow my tutorial and just want my template?
+                You can just download it <a href="#">here</a>.
+            </p>
+            <h2>ANATOMY OF A RESOURCE PACK</h2>
+            <p> A resource pack needs to have 2 main elements to be detected by the game and 1 optional that I highly
+                suggest using.
+            </p>
+            <h3>pack.mcmeta</h3>
+            <p> This is the heart of your pack. Without it, your pack will not be detected by the game, it will be used
+                to determine the version and the description of your pack. It needs to be something that will make it
+                easy for people to know who it's from and what it is, while keeping it short.
+            </p> So here is an example of this
+            <pre>{ 
+    "pack": { 
+        "pack_format": 7, 
+        "description": "By xalixilax"
+    } 
+}</pre>
+            <div class="accordion" id="accordion-format">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="true"
+                            aria-controls="collapse-2"> Pack Format </button> </h2>
+                    <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordion-format">
+                        <div class="accordion-body">
+                            <p> Having a pack version that does not match your current game version, does not mean that
+                                it will not work. Pack version 4 to 7 only had some minor change in it but most of it's
+                                content should work properly.
+                                Don't be afraid to give it a try it even if you get the warning that the pack is not
+                                compatible. It will usually still work.
+                            </p> <img src="../images/tutorial/incompatible.png" alt="incompatible">
+                            <p> Here is a list of the pack versions if you are creating a texture pack. As said earlier,
+                                I will most likely focus on version since 4 to 7 since this is what I am experienced
+                                with. For 1.8.9, there is are some guides that might be more appropriate especially when
+                                it comes to blockstates or models.
+                            </p>
+                            <ul>
+                                <li><span class="badge bg-secondary">1</span> 1.6-1.8.9</li>
+                                <li><span class="badge bg-secondary">2</span> 1.9-1.10.2</li>
+                                <li><span class="badge bg-secondary">3</span> 1.11-1.12.2</li>
+                                <li><span class="badge bg-secondary">4</span> 1.13-1.14.4</li>
+                                <li><span class="badge bg-secondary">5</span> 1.15-1.16.1</li>
+                                <li><span class="badge bg-secondary">6</span> 1.16.2-1.16.5</li>
+                                <li><span class="badge bg-secondary">7</span> 1.17</li>
+                                <li><span class="badge bg-secondary">8</span> 1.18+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion-format">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo"> <button class="acc-button collapsed collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false"
+                            aria-controls="collapse-3"> Description </button> </h2>
+                    <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordion-format">
+                        <div class="accordion-body"> The description can contain multiple special characters.
+                            <img src="../images/tutorial/description.png" alt="">
+                            <p> For this example, it would look something like this:
+                            </p>
+                            <pre>{ 
+    "pack": { 
+        "pack_format": 7, 
+        "description": "§6By xalixilax\n§3Tutorial §f§kPack"
+    } 
+}</pre> <span>So here you can see:</span>
+                            <ul>
+                                <li>§6 to set the text dark yellow;</li>
+                                <li>\n to skip the line;</li>
+                                <li>§3 to set the text dark aqua;</li>
+                                <li>§f§k to set the text white and obfuscated.</li>
+                            </ul>
+                            <ul>
+                                <li><span class="badge" style="background-color: black;">§0 </span>Black</li>
+                                <li><span class="badge" style="background-color: #00a;">§1 </span>Dark Blue</li>
+                                <li><span class="badge" style="background-color: #0a0;">§2 </span>Dark Green</li>
+                                <li><span class="badge" style="background-color: #0aa;">§3 </span>Dark Aqua</li>
+                                <li><span class="badge" style="background-color: #a00;">§4 </span>Dark Red</li>
+                                <li><span class="badge" style="background-color: #a0a;">§5 </span>Purple</li>
+                                <li><span class="badge" style="background-color: #fa0;">§6 </span>Dark Yellow</li>
+                                <li><span class="badge" style="background-color: #aaa;">§7 </span>Gray</li>
+                                <li><span class="badge" style="background-color: #555;">§8 </span>Dark Gray</li>
+                                <li><span class="badge" style="background-color: #55f;">§9 </span>Blue</li>
+                                <li><span class="badge" style="background-color: #5f5; color: black;">§a </span>Green
+                                </li>
+                                <li><span class="badge" style="background-color: #5ff; color: black;">§b </span>Aqua
+                                </li>
+                                <li><span class="badge" style="background-color: #f55;">§c </span>Red</li>
+                                <li><span class="badge" style="background-color: #f5f;">§d </span>Magenta</li>
+                                <li><span class="badge" style="background-color: #ff5; color: black;">§e </span>Light
+                                    Yellow</li>
+                                <li><span class="badge"
+                                        style="background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.125); color: black;">§f
+                                    </span>White</li>
+                                <li><span class="badge bg-secondary">§k </span> ë░¶¿®#¥■ Obfuscated</li>
+                                <li><span class="badge bg-secondary">§l </span> <b>Minecraft</b> Bold</li>
+                                <li><span class="badge bg-secondary">§m </span> <span>Minecraft Strikethrough</span>
+                                </li>
+                                <li><span class="badge bg-secondary">§n </span> <span><u>Minecraft</u> Underline</span>
+                                </li>
+                                <li><span class="badge bg-secondary">§o </span> <span><i>Minecraft</i> Italic</span>
+                                </li>
+                                <li><span class="badge bg-secondary">§r </span> Minecraft Reset</li>
+                                <li><span class="badge bg-secondary">\n </span> Skip Line</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>pack.png (Optional)</h3>
+            <p> This image will be displayed along with the description located in pack.mcmeta when they select your
+                pack in the game. Both of these elements help to distinguish your pack from others. This image will need
+                to be square starting at 32x32 px. For better results you might want to use a higher resolution.
+            </p>
+            <h3>assets</h3>
+            <p> This is where all your files are going to be located. This is basically just a folder.
+                Resource packs works by overwriting assets from the directory where it is located.
+                Usually, it will look something like this:
+            </p>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-2"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="true"
+                            aria-controls="collapse-4"> Files explorer </button> </h2>
+                    <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-2"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body d-flex flex-dirextion-column">
+                            <div><img src="../images/tutorial/file_explorer.png" alt=""></div>
+                            <div> <b>minecraft</b>
+                                <p> This is the namespace. Most of the time, this will not be changed since you want to
+                                    change the base game textures. You might want to create a new namespace if you are
+                                    creating textures for a mod.
+                                </p> <b>blockstates</b>
+                                <p> This is the first folder that is read by the game. You will change it if you want to
+                                    create variated textures for a block or when you want to modify how some blocks
+                                    react.
+                                    For example if you want to create a custom model when the fence post has a tag
+                                    waterlogged=true.
+                                </p> <b>font</b>
+                                <p> Contain properties for font. You will modify it when you want to create custom font
+                                    or icons. An original use of this is if you want to create a guide for brewing when
+                                    you open the brewing stand GUI, like <a href="/texture-pack/icons-4896712">this</a>
+                                    by WeNAN Studios.
+                                </p> <b>lang</b>
+                                <p> This is where you go to change anything that is written in the game. You will modify
+                                    it if you want to create a new language, change a button text or modify the name of
+                                    an item.
+                                </p> <b>models</b>
+                                <p> This is where all your block models are. This section with blockstates are the most
+                                    complicated to understand and use propely. At first it will be used mostly to create
+                                    variated textures, but it could allow you to create 3D items or custom block models.
+                                </p> <b>particle</b>
+                                <p> Will tell which textures to use for each particles. It could allow you to use more
+                                    particle for the campfire if you want.
+                                </p> <b>shaders</b>
+                                <p> This is pretty new stuff and haven't had much time to play with it, but basically
+                                    since 1.17, minecraft had some shader capability and this is where you go to change
+                                    it.
+                                </p> <b>texts</b>
+                                <p>Contain some of the longer texts like the end credit or the splashes.</p>
+                                <b>textures</b>
+                                <p> This is where most of the fun is for texture pack creators. Contains every textures,
+                                    except some of the realms one, that you can modify placed by categories.
+                                </p> <b>realms</b>
+                                <p>Some of the language files and textures that are specific to the realm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>TOOLS</h2>
+            <p> There is 3 main tools that you are gonna use. An image editor, a model editor and a text editor. If you
+                never worked with an image editing/creation software, you might want to start with something like <a
+                    href="/account/manage/blogs/4425239/www.pixilart.com">Pixelart.com</a>. It is online, requirea no
+                download, you can use it on a phone, a tablet or a web page if you want, about 90% of the things you
+                might need are present for pixel art and is really easy to use. Add a text editor like <a
+                    href="https://code.visualstudio.com/download">VSCode</a> and <a
+                    href="https://www.blockbench.net/downloads">Blockbench</a> then you are ready to go.
+            </p>
+            <p> Being a graphic designer and a computer enthusiast, I've had to use a lot of different programs of all
+                sort and really like to take advantage of my time. This is a list of program that I had to use that I
+                thing are worth using and the reason why you might want to use it.
+            </p>
+            <div class="accordion" id="accordion-programs">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-3"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="true"
+                            aria-controls="collapse-5"> Programs </button> </h2>
+                    <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-3"
+                        data-bs-parent="#accordion-programs">
+                        <div class="accordion-body">
+                            <p> For advanced user and people that might want to go all in in texture pack creation, you
+                                will need some more tools that will greatly help you save time for bigger projects. For
+                                the model editor, the choice is simple, <a
+                                    href="https://www.blockbench.net/downloads">Blockbench</a> is a powerful tool free
+                                of use with lot of great tutorial online. For the text editor, you might want to have <a
+                                    href="https://notepad-plus-plus.org/downloads/">Notepad++</a> and <a
+                                    href="https://code.visualstudio.com/download">VSCode</a>. When it come to image
+                                editor, the choice is a bit more complicated and you have a lot, but I mean, a LOT of
+                                choice. If you want to create a low resolution texture pack, I suggest going with <a
+                                    href="https://www.aseprite.org/">Aseprite</a> instead of <a
+                                    href="/account/manage/blogs/4425239/www.pixilart.com">Pixelart.com.</a> You might
+                                want to use <a href="https://www.gimp.org/downloads/">GIMP</a> for realistic texture
+                                pack or if you want to create bigger format images like thumbnail. One program that is a
+                                good practice to use for multiple reason is <a href="https://pnggauntlet.com/">PNG
+                                    Gauntlet</a>. I'll go more in detail in the section below with a bit more suggestion
+                                that you might want to use later.
+                            </p> <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>
+                            <p> A really efficient program with a lot of flexibility. Allows for easy creation of files
+                                and suggestion for you to use when you type. The main reason why I use it is because it
+                                is a really quick program. Open in an instant and allow me to replace text in multiple
+                                files at the same time. This comes in handy when you want to change, for example, acacia
+                                to oak for multiple files. Another use that will be shown in a future guide, is if you
+                                want to create variated texture for a block, you can have multiple template that you
+                                always copy over and replace the name so it use the correct texture.
+                            </p> <a href="https://code.visualstudio.com/download">VSCode</a>
+                            <p> This tool is useful for syntax. It highlights any mistakes when you are working on JSON
+                                files so you don't forget something like this : <>, {}, [], '' or "".
+                            </p> Notepad or Bloc note <p> These 2 are not worth using in my opinion. They let you make
+                                mistakes and lack basic functionality. You would be better to go with Notepad++. If you
+                                are on Mac, there is still some better alternative that you could easily find.
+                            </p> <a href="https://www.blockbench.net/downloads">Blockbench</a>
+                            <p> This program is made for cubic models and does everything that you might want to do. It
+                                is supporting Minecraft 100% and is easy to use. It also allow you to create textures
+                                inside of it instead of working on flat textures. ewanhowell5195 also created an <a
+                                    href="https://www.blockbench.net/plugins/cem_template_loader">addon</a> that let you
+                                easily modify Minecraft entity using Optifine.
+                            </p> <a href="https://www.aseprite.org/">Aseprite</a>
+                            <p> I've been used to Photoshop for quite some time and I often like to use Aseprite for
+                                some use. It need anything a pixel artist might need. Palette, layer, animation, tiling,
+                                etc. This software is really inexpensive and can also be compile for free if you want to
+                                dive in this. It is also widely used, have a lot of tutorials available and still get
+                                regularly updated. The only downside might be if you want to get away of the limitation
+                                of pixel art and want to create realistic or vectoriel.
+                            </p> <a href="https://www.gimp.org/downloads/">GIMP</a>
+                            <p> This one is the best choices if you want to create larger textures. It is the most
+                                powerful free option for large format image. It will let you modify any images but is
+                                not most suited for pixel art.
+                            </p> Photoshop and Illustrator <p> If you are lucky enough to have access to those 2, I
+                                think this is a no brainer. Two of the most powerful programs that you can find for
+                                image editing. Photoshop is for image editing and Illustrator is for vectoriel.
+                            </p> <a href="https://www.pixilart.com/">Pixilart.com</a>
+                            <p> This website is a great option for beginner creator. It has all the tools you might need
+                                to create a good pixel art, like brush, palette, shape, spray, etc. It lack some feature
+                                like animations but overall, it will be perfect to dive into it and see if you like
+                                pixel art or not. On the plus side, the layout is really similar to Aseprite so even if
+                                you switch, you don't have to learn everything again and you should be able to follow
+                                what I'm doing.
+                            </p> <a href="https://www.dotpdn.com/downloads/pdn.html">Paint.Net</a>
+                            <p> This software is a good beginner software that contains most of the functions you need
+                                and is free. It can be used for pixel art or larger image formats and even has the
+                                option to use <a
+                                    href="https://forums.getpaint.net/forum/7-plugins-publishing-only/">plugins.</a>
+                                That said it might not be the best choice for beginners since there is a lot of options,
+                                lacks a proper palette and use some uncommon shortcut (Most of the software usually use
+                                the same shortcut) and might not be as complete as something like GIMP or Photoshop.
+                                This make it a perfect app for people that don't want to bother with learning multiple
+                                program and just want to create texture pack. One important note about this software
+                                while creating pixel art, when you are using the line tool, make sure to have
+                                <b>Antialiasing Disabled</b> and when you scale a selection that <b>Quality</b> is set
+                                to <b>Nearest Neighbor.</b> This will help you get pixel perfect texture with only the
+                                desired colors.
+                            </p> <a href="https://www.bulkrenameutility.co.uk/">Bulk Rename Utility</a>
+                            <p> This might seems a bit overwhelming the first time you open this software but you have
+                                no idea how much time it saved me. This software just renames files but like Notepad++
+                                can do to the text, this can do for the extension. I often use it if I'm using for
+                                example template_0.json, template_1.json, template_2.json and I want to replace template
+                                to acacia_plank_0.json, acacia_plank_1.json, acacia_plank_2.json. I can do this in a
+                                matter of second with this tools. 3 files isn't much and I've done it with a lot more. I
+                                also used it to rename some of my optifine tiles from 0-16 to 20-36 while using Optifine
+                                CTM. I will be using it in a future guide for sure.
+                            </p> <a href="https://pnggauntlet.com/">PNG Gauntlet</a>
+                            <p> Another one that might seem sketchy but will be useful for texture pack creation. Just
+                                dragging your assets file in it will index all your PNG and reduce the size by a lot.
+                                This might not seems like much but it will make your pack load faster which will come
+                                handy when you test for you textures. It will also make it faster to download and for
+                                larger pack, it will help you to not reach the 50 mo limit. This is mostly just a good
+                                practice.
+                            </p> <a href="https://github.com/ewanhowell5195/ewanhowell5195.github.io/releases">Ewan
+                                Howell</a>
+                            <p> He created a lot of useful tools for texture pack maker which a lot are oriented a bit
+                                more toward optifine. I won't go into much details but I think this is important that I
+                                drop this here for you to explore by yourself.
+                            </p>
+                            <p> There is a lot more texture editing software you might find out there but nothing that I
+                                tried that was worth mentioning. A lot might be useful at first but they might end up
+                                lacking features when you get better.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>CREATING YOUR FIRST TEXTURE PACK</h2>
+            <p> Let's dive in it and create your first texture pack. For this one, we will keep it simple and create one
+                block texture and one item texture.
+            </p>
+            <h3>Extracting the resources</h3>
+            <p> The first step we are gonna do is to locate and extract the default Minecraft files. This will be useful
+                to see where everything is located and named when you work on your texture pack. To do so, you have to
+                locate the .minecraft folder.
+            </p>
+            <table class="table table-bordered shadow-sm">
+                <tr>
+                    <th>Windows</th>
+                    <td>
+                        <ul class="">
+                            <li><span>Press <kbd> Windows</kbd> + <kbd>R</kbd></span></li>
+                            <li><span>Type <code>%appdata%\.minecraft</code></span></li>
+                            <li><span>Hit <kbd> Enter</kbd></span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>MacOS</th>
+                    <td>
+                        <ul>
+                            <li><span>Open Finder</span></li>
+                            <li><span>Press <kbd> Shift</kbd>+<kbd>Cmd</kbd>+<kbd>G</kbd></span></li>
+                            <li><span>Type <code>~/Library/Application Support/minecraft</code></span></li>
+                            <li><span>Hit <kbd>Enter</kbd></span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <p> From there, go to the folder <code>version</code> and open the version folder you wish to extract the
+                content from. For me, it's gonna be 1.17.1. From there you should see 1.17.1.jar. With a data
+                compressing tool (In my case I am using Winrar) I will <b>Right-Click ➡Open with Winrar</b>. You should
+                now see a folder called <code>assets</code>. Just copy it somewhere you will remember. This will be one
+                of you reference for resource pack creation.
+            </p>
+            <h3>Creating the folders</h3>
+            <p> For this part, it consists of simply creating the folder you're gonna need.
+                Let's start with where you are gonna need to put your textures. Since we are only creating a simple
+                resource pack, we won't need much. The first file we are gonna create is in your
+                <code>resourcepacks</code> folder. This one is located at the same place as the <code>version</code>
+                folder from above.
+                <b>Right-Click</b> <b>➡ New ➡ Folder </b>and name it the name of your pack. You can always change it
+                later. For this example, it's gonna be named <code>Tutorial</code>.
+                In that folder create <code>assets</code>. Remember the assets folder you just extracted? From now on
+                you will always need to follow the structure of it. For this tutorial we are gonna replace one item
+                texture and one block texture. They are respectively located in:
+            </p>
+            <p> <code>Tutorial\assets\minecraft\textures\item\itemToReplace.png</code><br>
+                <code>Tutorial\assets\minecraft\textures\block\blockToReplace.png</code>
+            </p>
+            <p> Time to create those folders. So you need <code>minecraft</code> inside of <code>assets</code>,
+                <code>textures</code> inside of <code>minecraft</code> then finally <code>item</code> and
+                <code>block</code> inside of <code>textures. </code>In the end, you should have something that looks
+                like this:
+            </p>
+            <table class="table table-bordered shadow-sm">
+                <tr>
+                    <td><img src="../images/tutorial/folder.png" alt=""></td>
+                </tr>
+            </table>
+            <div class="alert-custom-red">
+                <h5 class="button btn-red w-100">DO NOT JUST COPY OVER THE ASSETS FOLDER YOU EXTRACTED</h5>
+                <div class="p-4">
+                    <p>
+                    <p> This is something I see way too often when reviewing new packs and it always result in change
+                        required.
+                        It is way more work deleting afterward what you didn't create than just creating new folder.
+                        There is actually multiple reason why you should not do it and it goes as follow:
+                    </p>
+                    <p> This constitutes as a copyright infringement. It might seems like nothing, but in the worst
+                        case, you could get sued for using their assets. This has probably never happened with Minecraft
+                        content but better be safe than sorry;</p>
+                    <p>It will make your pack way bigger. This will result in longer pack load time and believe me,
+                        you're gonna do it a lot when testing your textures. When I'm using xali's Enhanced Vanilla, it
+                        can take 3 times longer than some small pack like xali's display, which is just 1 file;</p>
+                    <p>The latest issue you're gonna have is compatibility. Since it is overwriting every texture of the
+                        game, all the pack installed below yours won't work. If for example someone want to use your
+                        sword pack over Stay True, it won't be possible.</p>
+                    </p>
+                </div>
+            </div>
+            <h2 class="h2-danger"> </h2>
+            <h3>Creating the pack.mcmeta</h3>
+            <p> For your packs to work properly, you're gonna have to create the pack.mcmeta. To create it, simply
+                <b>Right-Click ➡ New ➡ Text Document </b>then rename this file <b>including the extension</b> to
+                pack.mcmeta.
+                You can go back to the pack.mcmeta section above if you need some help with the codes.
+            </p> Template ➡ <a
+                href="https://cdn-103.anonfiles.com/ndc3s8M2u2/ad2831ca-1633667859/pack.mcmeta">pack.mcmeta</a>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-6"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="true"
+                            aria-controls="collapse-6"> Having issue?
+                        </button> </h2>
+                    <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">Having issue?]If you are having issue with the extension name not
+                            showing, you can enable it in <b>File Explorer ➡ Display ➡ File name extension.</b> <img
+                                src="../images/tutorial/file_extension.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <h3>Creating your first textures</h3>
+            <p> I am not the best pixel artist and I am far from it, but I've studied Jappa style quite a lot to be able
+                to reproduce blocks that look like it and fit well in the game. In the spoiler down below there is a
+                quick and complete tutorial on how I do it using <a href="https://www.aseprite.org">Aseprite</a>. This
+                is in my opinion the best beginner tool you can have. It is inexpensive, you can get it free if you feel
+                like compiling the source code, is really complete and easy to understand. Pretty much everything pixel
+                art related is gonna be included in this program. For those that don't want to pay yet, I suggest using
+                <a href="https://www.pixilart.com">Pixilart.com</a> for now. Every tools are about the same and easy to
+                understand.
+            </p>
+            <p> For people that already know how to create textures, you can just skip this part. I will just go over
+                some of the basics to let you get started. I won't really go in depth.
+            </p>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-7"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="true"
+                            aria-controls="collapse-7"> Texturing your first block </button> </h2>
+                    <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">]The first thing we're gonna do is open Aseprite, obviously and you
+                            should see a screen like that.
+                            <img src="../images/tutorial/Aseprite_import.png" alt="">
+                            <p> This part is optional. We will create a palette based off of an existing block. This
+                                will help us create a block that will fit properly with other similar block. If you want
+                                to entirely revamp a block, feel free to create your own palette. Just a side note,
+                                block usually use a 7 colors palette with sometime 1 or 2 accent colors. For example the
+                                andesite that have some light blue pixel or dirt that have grey pixel in it. There is
+                                some exception but usually, a 5, 7 or 9 colors is a good starting point. If you want to
+                                use 2 main colors, you might want to use multiple color palette or an extended one that
+                                goes from your first color to your second.
+                            </p>
+                            <p> On <a href="https://www.pixilart.com">Pixelart.com</a> you will have to go in <b>File ➡
+                                    New</b> then click on <b>Open Image</b>. When it's done, on the right side you will
+                                see a pre generated palette. Click On the little "<b>+</b>" above it and create a new
+                                palette. It will clear what was previously there. Below the palette, you will see
+                                "<b>◎</b>", click on it. Here you have you palette generated from your image.
+                            </p>
+                            <p> To help us a bit, we will reorganize our colors, by lighting. Click on the
+                                "<b>🠗</b>"<b>➡ Sort By Brightness. </b>You can also click on the color, then move to
+                                it's border. You should be able to drag and drop it.
+                            </p> <img src="../images/tutorial/Aseprite_palette.png" alt="">
+                            <p> To start of, let's start by using the bucket <kbd>G</kbd> and fill the texture with the
+                                4th color. This will be the base color and will help you for the rest.
+                            </p> <img src="../images/tutorial/Aseprite_bucket.png" alt="">
+                            <p> Now comes the fun part, creating the brick shape. I usually go with the darkest color
+                                then just drawsome line with the pencil <kbd>B</kbd>. Feel free to try some shape.
+                                usually, you will have adark seam at the bottom and the right. This will make this more
+                                consistent with other Minecraft blocks.
+                            </p> <img src="../images/tutorial/Aseprite_pencil_1.png" alt="">
+                            <p> Now that your block have his general texture, it is time to tile our block. This will
+                                let us see how it looks when the texture is side by side. This will help us see if some
+                                pixels from the left/right or top/down of your texture don't really look good together.
+                            </p>
+                            <p> Then let's continue by adding some light to it. With the lightest color you have, we
+                                will add some pixels in the corner of each brick. No need to be consistent, just a
+                                general look. At this point you should have a good idea of what you block will look
+                                like.
+                            </p>
+                            <p>
+                                On <a href="/account/manage/blogs/4425239/www.pixilart.com">Pixelart.com</a> go on the
+                                right and click <b>Option ➡ Tile Mode</b>
+                            </p><img src="../images/tutorial/Aseprite_tiled_2.png" alt="">
+                            <p> It is now time to add more detail to your texture. The seam usually have 2 main colors
+                                and sometime a 3rd one. You can see it like in the planks which reuse the 5th colors as
+                                shadow and seam. In my case, I'm gonna go with 2 colors only. So I take my 6th colors
+                                and just add random spot. For shiny texture, you might want to it more toward where you
+                                have your lightest color.
+                            </p> <img src="../images/tutorial/Aseprite_pencil_3.png" alt="">
+                            <p>Now we will add some shadows. This will go on the opposite side of your first color.</p>
+                            <img src="../images/tutorial/Aseprite_pencil_4.png" alt="">
+                            <p> In the two next pictures, I'm progressively adding some more colors so I'm taking
+                                advantage of the 7 I have.
+                            </p> <img src="../images/tutorial/Aseprite_pencil_5.png" alt=""> <img
+                                src="../images/tutorial/Aseprite_pencil_6.png" alt="">
+                            <p> When satisfied with the texture, it's gonna be time to adjust some of the colors. In my
+                                case, I wasn't really happy with how the corner of the big brick looked, so I made the
+                                seam darker and use the 6th color to give it a bit more depth. I also adjusted some of
+                                the other colors so it look a bit better.
+                            </p> <img src="../images/tutorial/Aseprite_pencil_7.png" alt="">
+                            <p> Here is the final result. Usually I like to create more version of my texture to see if
+                                I could make it look better. Maybe trying to remove the inner seam, give it a lighter
+                                look, play with the shape of some of the bricks, but for this tutorial, this is a great
+                                start. The rest will be up to you to experiment with. Having multiple iteration of a
+                                final block is a quick and easy way to create something you really like. It often don't
+                                take that much time and allow you to create something entirely different.
+                            </p> <img src="../images/tutorial/Aseprite_pencil_8" alt=""> <img
+                                src="../images/tutorial/Aseprite_final_1.png" alt=""> <img
+                                src="../images/tutorial/Aseprite_final_2.png" alt=""> <b>Now File ➡ Save
+                                as... </b>or press <b><kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>S</kbd></b> and save it as
+                            <b>purpur_block.png</b>. The extension name need to be <b>.png</b> or it won't work
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-8"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="true"
+                            aria-controls="collapse-8"> Creating your first item </button> </h2>
+                    <div id="collapse-8" class="accordion-collapse collapse" aria-labelledby="heading-8"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p> For this item, lets create something a little different and create a bloody battleaxes.
+                                We will use this one to replace the iron axe. The process will be similar at first. I
+                                decided to use the palette from the cauldron, and used the stick as a base for my item.
+                                This saves some time and allows me to point some things out. If you look at it, you can
+                                see the the bottom of the stick is a darker color than the top of it. This is something
+                                that is gonna be true for every Minecraft items.
+                                Most of the time it will be only 2 colors for the border but it can be a little more. It
+                                help to give some depth to an item that would otherwise look way too flat.
+                            </p> <img src="../images/tutorial/first item/1.png" alt="">
+                            <p> First thing that I always do when I create an item is to start by drawing solid color.
+                                This help me get the shape right right at the start. You can always modify later, but
+                                really help you for the rest.
+                            </p> <img src="../images/tutorial/first item/2.png" alt="">
+                            <p> Now lets add the borders. As you can see, the bottom side has the darkest color (7th
+                                color) and the top one had something a bit lighter (6th color) I also took the liberty
+                                to use a third one since I want it to look a bit more shiny.
+                            </p> <img src="../images/tutorial/first item/3.png" alt="">
+                            <p> This step consist of adding the remaining colors. Usually lighter colors will go top
+                                left while darker will go bottom right. Of course I'm trying to follow the curve that
+                                the item would have. If you look you can see a curve following the top and bottom edge
+                                with lighter and darker colors to highlight the sharpness.
+                            </p> <img src="../images/tutorial/first item/4.png" alt="">
+                            <p>Let's add some red to imitate the blood.</p> <img
+                                src="../images/tutorial/first item/5.png" alt="">
+                            <p>And why not some grip and longer stick for better proportions.</p> <img
+                                src="../images/tutorial/first item/6.png" alt="">
+                            <p> And done with the item. Just need to save it and we are done for this part. It is now
+                                time to put this in your game. <b>Now File ➡ Save as... </b>or press <b><kbd>ctrl</kbd>
+                                    + <kbd>alt</kbd>+ <kbd>s</kbd></b> and save it as <b>iron_axe.png</b>. The extension
+                                name need to be <b>.png</b> or it won't work </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>Putting everything together</h3>
+            <p> Now that you have your pack.mcmeta, your 2 images and all your files created, it's gonna be time to put
+                everything together. So in the folder <b>Tutorial</b> you will place pack.mcmeta. If you have created a
+                <b>pack.png</b>, you also need to place it there. For testing purpose, you can download the one below.
+                When you are done, you will need to place both of your texture there:
+            </p> <code>Tutorial\assets\minecraft\textures\item\iron_axe.png</code> <br>
+            <code>Tutorial\assets\minecraft\textures\block\purpur_block.png</code> <br> Template<b> ➡ pack.png <img
+                    src="../images/tutorial/result/pack.png" alt=""> </b> <br> Template<b> ➡ purpur_block.png <img
+                    src="../images/tutorial/result/purpur_block.png" alt=""> </b> <br> Template<b> ➡ iron_axe.png <img
+                    src="../images/tutorial/result/iron_axe.png" alt=""></b>
+            <h3>Testing your pack</h3> Now that everything is in place, it is time to test it and see what you did.
+            Hop in the game, find your pack and add it to your selected pack. Press done and watch the result! <div
+                class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-9"> <button class="acc-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-9" aria-expanded="true"
+                            aria-controls="collapse-9"> Selecting the pack </button> </h2>
+                    <div id="collapse-9" class="accordion-collapse collapse" aria-labelledby="heading-9"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body"><img src="../images/tutorial/result/1.png" alt=""> </div>
+                    </div>
+                </div>
+            </div>
+            <img src="../images/tutorial/result/result.png" alt="">
+            <h3>Sharing your pack</h3>
+            <p> This step is often not done properly yet really easy to do. Instead of adding <b>Tutorial</b> to the
+                zip, we will add <b>pack.png, pack.mcmeta and assets</b> to the zip. Doing it this way, people will be
+                able to simple download, place it in the <b>resourcepack</b> folder and it will be ready to be used.
+            </p>
+            Template <b> ➡ <a href="#">Tutorial.zip</a></b>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading10"> <button class="acc-button collapsed test" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapse-10" aria-expanded="true"
+                            aria-controls="collapse-10"> Zipping your pack properly </button> </h2>
+                    <div id="collapse-10" class="accordion-collapse collapse" aria-labelledby="heading-10"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-center"><img src="../images/tutorial/zip.png" alt=""><img
+                                src="../images/tutorial/zip_2.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <p> I hope that you liked this tutorial and it helped you create your first texture pack. This is one of
+                multiple that I
+                will do. If you think anything was not clear enough or want to suggest tutorial ideas, let me know. I
+                you really liked
+                it, you can support me on <a href="https://www.patreon.com/xalixilax">Patreon</a> where I post preview
+                and temporary
+                exclusive content. You can also get a list of my templates <a
+                    href="https://www.patreon.com/posts/57403562">there</a>.
+            </p>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">ABOUT</h5> <button type="button"
+                            class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Tout le contenue de ce site (Illustration, capture d'écran, texture pack, etc.) sont mes
+                            création et tout les droits m'appartiennent. Certains codes identifié ont été pris sur
+                            internet.</p>
+                        <div class="text-center">
+                            <img
+                                src="../images/pfp.PNG" alt="Maxime Lefebvre" class="rounded-2 shadow-sm">
+                        </div>
+                    </div>
+                    <div class="modal-footer"> <button type="button" class="button button-sm btn-neutral"
+                            data-bs-dismiss="modal">Close</button> <button type="button"
+                            class="button button-sm">Understood</button> </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal https://getbootstrap.com/docs/5.0/components/modal/-->
+    </main>
+
+    <!--Footer-->
+    <footer class="text-center mt-5">
+        <!--Icons-->
+        <div class="p-4"> <a href="https://twitter.com/xalixilax"><i class="fab fa-twitter-square fa-2x"></i></a> <a
+                href="https://www.curseforge.com/members/xalixilax/projects"><i
+                    class="icon-curseforge-brands fa-2x"></i></a> <a href="https://discord.gg/SHtySurd4k"><i
+                    class="icon-discord-brands fa-2x"></i></a> <a href="https://www.patreon.com/xalixilax"><i
+                    class="icon-patreon-brands fa-2x"></i></a> <a
+                href="https://www.planetminecraft.com/member/xalixilax/"><i class="icon-pmc-brands fa-2x"></i></a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-2"> © 2020 Copyright: Maxime Lefebvre </div>
+    </footer>
+    <!--Footer-->
+</body>
+
+</html>

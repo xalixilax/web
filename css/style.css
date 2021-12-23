@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot');
+  src: url('../fonts/icomoon.eot?cvyt3c#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?cvyt3c') format('truetype'),
+    url('../fonts/icomoon.woff?cvyt3c') format('woff'),
+    url('../fonts/icomoon.svg?cvyt3c#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --discord-dark: #434dc4;
+  --discord-darker: #2e3691;
+  --discord: #5865f2;
+  --gray-dark: #474b4f;
+  --gray-darker: #222629;
+  --gray: #6b6e70;
+  --light-gray: #f0f0f0;
+  --teal: #26A69A;
+  --yellow-dark: #d28026;
+  --yellow-darker: #ae5a11;
+  --yellow: #deaa3b;
+  --red-lighter: #f8d7da;
+  --red: #D32F2F;
+  --red-dark: #B71C1C;
+  --red-darker: #921111;
+  --purple: #65ccb8;
+  --purple-dark: #57ba98;
+  --purple-darker: #3b945e;
+}
+
+a {
+  color: var(--discord-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a[href*="#"] {
+  text-decoration: line-through;
+  color: var(--gray);
+}
+
+a:visited {
+  color: var(--red-dark);
+}
+
+body {
+  background-color: #1f2228;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01;
+  font-size: 1rem;
+}
+
+.button {
+  background: var(--yellow);
+  border: 0;
+  border-bottom: 6px solid var(--yellow-dark);
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 18px 50px 18px 50px;
+  text-align: center;
+  transition: all 0.25s ease;
+  vertical-align: center;
+}
+
+.button:hover {
+  background: var(--yellow-dark);
+  border-bottom: 6px solid var(--yellow-darker);
+  color: white;
+}
+
+.button:active {
+  letter-spacing: 2px;
+  letter-spacing: 2px;
+}
+
+.button-sm {
+  border-bottom: 4px solid var(--yellow-dark);
+  padding: 8px 30px 8px 30px;
+}
+
+.button-sm:hover {
+  border-bottom: 4px solid var(--yellow-darker);
+}
+
+.btn-discord {
+  background: var(--discord);
+  border-color: #434dc4;
+}
+
+.btn-discord:hover {
+  background: var(--discord-dark);
+  border-color: var(--discord-darker);
+}
+
+.btn-neutral {
+  background: var(--gray);
+  border-color: var(--gray-dark);
+}
+
+.btn-neutral:hover {
+  background: var(--gray-dark);
+  border-color: var(--gray-darker);
+}
+
+.btn-red {
+  background: var(--red);
+  border-color: var(--red-dark);
+}
+
+.btn-red:hover {
+  background: var(--red-dark);
+  border-color: var(--red-darker);
+}
+
+.card-title {
+  color: var(--gray);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18pt;
+  font-weight: 800;
+}
+
+.f-light {
+  color: var(--light-gray);
+  letter-spacing: 0.03em;
+}
+
+footer {
+  background-color: var(--yellow);
+}
+
+footer>div:first-child {
+  color: var(--yellow-darker);
+  letter-spacing: 10px;
+}
+
+footer>div:last-child {
+  background-color: var(--yellow-dark);
+}
+
+footer i[class*="fa-"] {
+  color: var(--yellow-darker);
+}
+
+.subheader {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+  background-color: var(--light-gray);
+  padding: 0 10px;
+}
+
+h1 {
+  color: var(--gray-dark);
+  font-size: 3.25em;
+  line-height: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: -43px;
+  margin-top: -47px;
+  text-align: center;
+}
+
+h1:before,
+h1:after {
+  background-color: #333;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  z-index: -10;
+}
+
+h2 {
+  color: var(--yellow);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5em;
+  font-weight: 800;
+  text-shadow: 0 0.03em var(--yellow-dark), 0 0.06em var(--yellow-dark), 0 0.09em var(--yellow-dark);
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+h3 {
+  font-weight: 700;
+  color: var(--gray);
+}
+
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+header {
+  background-image: url("../images/header.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+
+header a {
+  padding: 40px;
+  z-index: 1;
+}
+
+.header-gradient {
+  background: linear-gradient(0deg, rgba(31, 34, 40, 1) 0%, rgba(31, 34, 40, 0) 100%);
+  height: 200px;
+  margin-top: auto;
+  position: absolute;
+  width: 100%;
+}
+
+i[class*="fa-twitter-square"],
+i[class*="fa-angle-up"],
+i[class*="icon-"] {
+  transition: all .2s ease-in-out;
+}
+
+i[class*="fa-twitter-square"]:hover,
+i[class*="fa-angle-up"]:hover,
+i[class*="icon-"]:hover {
+  transform: scale(1.4);
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-curseforge-brands:before {
+  content: "\e900";
+}
+
+.icon-discord-brands:before {
+  content: "\e901";
+}
+
+.icon-optifine:before {
+  content: "\e902";
+}
+
+.icon-patreon-brands:before {
+  content: "\e903";
+}
+
+.icon-vanilla:before {
+  content: "\e904";
+}
+
+.icon-up-arrow:before {
+  content: "\e906";
+}
+
+.icon-down-arrow:before {
+  content: "\e905";
+}
+
+.icon-pmc-brands:before {
+  content: "\e907";
+}
+
+li {
+  display: flex;
+  list-style: none;
+}
+
+#logo {
+  margin: auto;
+  max-width: 700px;
+  top: 30px;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+#tutorial img {
+  margin-bottom: 20px;
+}
+
+table {
+  background-color: white;
+}

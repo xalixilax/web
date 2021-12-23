@@ -1,0 +1,89 @@
+.card {
+      border: none;
+      box-shadow: 1px 5px 5px grey;
+      height: 100%;
+}
+
+.card>div:first-of-type {
+      background-color: #1a1d21;
+      border-radius: 5px 5px 0px 0px;
+      color: white;
+      text-align: center;
+}
+
+.card-img-top {
+      height: 200px;
+      width: 200px;
+}
+
+#carousel {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
+      margin-bottom: -4vw;
+      width: 100%;
+}
+
+.carousel-caption {
+      bottom: calc(1.25rem + 2vw) !important;
+}
+
+.carousel-caption>h5 {
+      font-size: 8vw;
+      line-height: 7vw;
+      text-align: right;
+}
+
+.carousel-caption>p {
+      font-size: calc(1em + 0.5vw);
+      text-align: right;
+}
+
+.discord {
+      color: var(--discord) !important;
+      text-shadow: 0 0.03em var(--discord-dark),
+            0 0.06em var(--discord-dark),
+            0 0.09em var(--discord-dark) !important;
+}
+
+#discord {
+      padding: 20px;
+}
+
+html {
+      scroll-behavior: smooth;
+}
+
+#updates li {
+      display: list-item;
+      list-style: circle;
+}
+
+#updates {
+      background-color: #f0f0f0;
+      clip-path: polygon(0 0, 100% calc(0% + 4vw), 100% calc(100% - 4vw), 0% 100%);
+}
+
+.type {
+      align-self: flex-end;
+      color: #7e7e7e;
+      display: flex;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      left: 18px;
+      position: absolute;
+      top: 182px;
+}
+
+#updates>div,
+#discord>div {
+      margin: auto;
+      max-width: 1440px;
+}
+
+#updates {
+      padding: 4vw;
+}
+
+#updates>ul {
+      margin-bottom: 16px;
+}
