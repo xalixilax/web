@@ -1,0 +1,20 @@
+form div {
+    display: none;
+} 
+
+.form-check {
+    display: none;
+}
+
+.active:not(.row) {
+    display: block;
+}
+
+.active.row {
+    display: flex;
+}
+
+.active.row > div {
+    display: block;
+    flex: 1 0 0%;
+}

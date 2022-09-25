@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <script src="../js/index.js" type="module" defer></script>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/properties_generator.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/my-handling-form-page" method="post" name="ctm" id="ctm">
+            <div class="form-group d-block">
+                <label for="method">Method:</label>
+                <select name="method" id="methodSelect" class="form-control">
+                    <option value="">--Please choose an option--</option>
+                    <option value="ctm">ctm</option>
+                    <option value="ctm_compact">ctm_compact</option>
+                    <option value="horizontal">horizontal</option>
+                    <option value="vertical">vertical</option>
+                    <option value="horizontal+vertical">horizontal+vertical</option>
+                    <option value="vertical+horizontal">vertical+horizontal</option>
+                    <option value="top">top</option>
+                    <option value="random">random</option>
+                    <option value="repeat">repeat</option>
+                    <option value="fixed">fixed</option>
+                    <option value="overlay_ctm">overlay_ctm</option>
+                    <option value="overlay_random">overlay_random</option>
+                    <option value="overlay_repeat">overlay_repeat</option>
+                    <option value="overlay_fixed">overlay_fixed</option>
+                </select>
+            </div>
+
+            <div id="maildiv" class="form-group m-any">
+                <label for="tiles">Tiles:</label>
+                <input type="text" id="tiles" name="user_email" class="form-control" required />
+            </div>
+
+            <div id="maildiv" class="form-group m-any">
+                <label for="matchTiles">Match Tiles:</label>
+                <input type="text" id="msg" name="user_message" class="form-control"></textarea>
+            </div>
+
+            <div id="maildiv" class="form-group m-any">
+                <label for="matchBlocks">Match Blocks:</label>
+                <input type="text" id="msg" name="user_message" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-any">
+                <label for="weight">Weight:</label>
+                <input type="text" id="msg" name="user_message" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-overlay">
+                <label for="connect">Connect:</label>
+                <select name="pets" id="pet-select" class="form-control">
+                    <option value="">--Please choose an option--</option>
+                    <option value="block">block</option>
+                    <option value="tile">tile</option>
+                    <option value="material">material</option>
+                    <option value="state">state</option>
+                </select>
+            </div>
+
+            <div class="form-group m-overlay">
+                <label for="connectTiles">Connect Tiles:</label>
+                <input type="text" id="connectTiles" name="connectTiles_message" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-any">
+                <label for="faces">Faces:</label>
+                <select name="faces" id="faces-select" class="form-control">
+                    <option value="">all</option>
+                    <option value="north">north</option>
+                    <option value="south">south</option>
+                    <option value="east">east</option>
+                    <option value="west">west</option>
+                    <option value="top">top</option>
+                    <option value="bottom">bottom</option>
+                    <option value="sides">sides</option>
+                </select>
+            </div>
+
+            <div class="form-group m-any">
+                <label for="biomes">Biomes:</label>
+                <input type="text" id="biomes" name="biomes_msg" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-any">
+                <label for="heights">heights:</label>
+                <input type="text" id="heights" name="heights_msg" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-ctm-compact">
+                <!-- Require ctm_compact -->
+                <label for="ctmIndex">ctmIndex:</label>
+                <input type="text" id="ctmIndex" name="ctmIndex_msg" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-overlay">
+                <label for="tintIndex">Tint Index:</label>
+                <input type="text" id="tintIndex" name="tintIndex_msg" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-overlay">
+                <label for="tintBlock">tintBlock:</label>
+                <input type="text" id="tintBlock" name="tintBlock_msg" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group m-any">
+                <label for="layer">layer:</label>
+                <select name="layer" id="layer" class="form-control">
+                    <option value="">cutout_mipped</option>
+                    <option value="cutout">cutout</option>
+                    <option value="translucent">translucent</option>
+                </select>
+            </div>
+
+            <div class="form-check m-ctm m-ctm-compact">
+                <label for="innerSeams">Inner seams</label>
+                <input class="form-check-input" type="checkbox" value="" id="innerSeams">
+            </div>
+
+            <div class="form-group m-random">
+                <label for="randomLoops">Random loops:</label>
+                <input id="randomLoops" type="text" name="randomLoops_msg" class="form-control">
+            </div>
+
+            <div class="form-group m-random m-repeat">
+                <label for="symmetry">Symmetry</label>
+                <select name="symmetry" id="symmetry" class="form-control">
+                    <option value="">none</option>
+                    <option value="opposite">opposite</option>
+                    <option value="all">all</option>
+                </select>
+            </div>
+
+            <div class="form-check m-random">
+                <label for="linked">Linked</label>
+                <input class="form-check-input" type="checkbox" value="" id="linked">
+            </div>
+
+            <div class="row m-repeat">
+                <div class="form-group col">
+                    <!-- Required if repeat-->
+                    <label for="width">Width:</label>
+                    <input id="width" type="text" class="form-control">
+                </div>
+
+                <div class="form-group col">
+                    <!-- Required if repeat-->
+                    <label for="height">height:</label>
+                    <input id="height" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="m-any">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>
