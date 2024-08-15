@@ -14,5 +14,8 @@
   },
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/xalix/Github/xalixilax.github.io/.github/workflows/deploy.yml"
   }
 }
