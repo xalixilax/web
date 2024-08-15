@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import xali from "../images/xali.png";
+---
+
+<header
+  class={`flex flex-col justify-end bg-[url("https://xalixilax.github.io/images/header.png")] bg-center bg-cover`}
+>
+  <a href="../index.html" id="logo" class="z-50 my-12">
+    <Image src={xali} alt="logo" class="mx-auto" />
+  </a>
+  <div class="h-[200px] w-full absolute mt-auto block gradient"></div>
+</header>
+<nav
+  class="flex flex-row bg-white justify-between items-center shadow-[0_.5rem_1rem_rgba(0,0,0,0.15)] text-[#6B6E70] py-4 px-8"
+>
+  <a href="./index.html" class="font-bold text-lg">HOME</a>
+  <div class="flex flex-row">
+    <ul class="flex flex-row space-x-4 mr-4 items-center font-semibold">
+      <li>
+        <a href="/resource-pack">Resource Pack</a>
+      </li>
+      <li>
+        <a href="#">Datapack</a>
+      </li>
+      <li>
+        <a href="/tools">Tools</a>
+      </li>
+      <li>
+        <a href="./pages/tutorial.html">Tutorial</a>
+      </li>
+      <li>
+        <a href="#">FAQ</a>
+      </li>
+    </ul>
+  </div>
+</nav>

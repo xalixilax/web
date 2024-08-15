@@ -1,0 +1,43 @@
+---
+import { Carousel } from "@/components/Carousel";
+import Changelog from "@/components/changelog.astro";
+import Title from "@/components/title.astro";
+import { Card, CardContent } from "@/components/ui/card";
+import { Content } from "@/components/ui/content";
+import { packs } from "@/data/resource-packs";
+import Layout from "@/layouts/Layout.astro";
+import { H2 } from "@/components/ui/h2";
+
+export async function getStaticPaths() {
+  return packs.map(({ slug, ...props }) => {
+    return {
+      params: { slug },
+      props: { ...props },
+    };
+  });
+}
+
+const { ...props } = Astro.props;
+---
+
+<Layout title={props.name}>
+  <!-- <Carousel client:load slides={props.images} /> -->
+  <Content>
+    <Title title={props.name} catchPhrase={props.catchPhrase} top="xali's" />
+    <Card className="max-w-[800px] mx-auto">
+      <CardContent>
+        <H2>Details</H2>
+        <p>{props.description}</p>
+        <!-- <p>Version: {props.version}</p>
+        <p>Author: {props.author}</p>
+        <p>Downloads: {props.downloads}</p> -->
+        <p>Downloads: {props.links?.changelog}</p>
+        {
+          props?.links?.changelog && (
+            <Changelog link={props.links.changelog} />
+          )
+        }
+      </CardContent>
+    </Card>
+  </Content>
+</Layout>

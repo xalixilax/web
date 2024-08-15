@@ -1,0 +1,112 @@
+---
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardNote,
+} from "@/components/ui/card";
+import { Content } from "@/components/ui/content";
+import { H2 } from "@/components/ui/h2";
+import "@/styles/globals.css";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+// import img1 from "../images/pack/enchanted_books/enchanted_books_1.png";
+// import img2 from "../images/pack/enchanted_books/enchanted_books_2.png";
+// import img3 from "../images/pack/enchanted_books/enchanted_books_3.png";
+
+import discord from "../images/discord.png";
+---
+
+<Layout title="Welcome to Astro.">
+  <!-- <Carousel client:load slides={[img1.src, img2.src, img3.src]} /> -->
+  <Content>
+    <H2>Recent updates</H2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+      <Card className="md:col-span-2 lg:col-span-1">
+        <CardHeader className=""><CardNote>November 28th</CardNote></CardHeader>
+        <CardContent>
+          <h3
+            class="font-[800] text-xxl text-gray-500 uppercase leading-6 mb-2"
+          >
+            Added Alex's Mobs
+          </h3>
+          <ul class="text-[1rem] list-[circle] ml-4">
+            <li>Added Alex's Mobs - Straddle Jump 1 2 3</li>
+            <li>Added Alex's Mobs - Lavawaxed</li>
+            <li>Added Alex's Mobs - Serpent Charmer</li>
+            <li>Added Alex's Mobs - Returning board</li>
+          </ul>
+        </CardContent>
+        <CardFooter className="text-indigo-600 text-sm font-bold">
+          See More
+        </CardFooter>
+      </Card>
+      <Card>
+        <CardHeader className=""><CardNote>November 28th</CardNote></CardHeader>
+        <CardContent>
+          <h3
+            class="font-[800] text-xxl text-gray-500 uppercase leading-6 mb-2"
+          >
+            Added Alex's Mobs
+          </h3>
+          <ul class="text-[1rem] list-[circle] ml-4">
+            <li>Added Alex's Mobs - Straddle Jump 1 2 3</li>
+            <li>Added Alex's Mobs - Lavawaxed</li>
+            <li>Added Alex's Mobs - Serpent Charmer</li>
+            <li>Added Alex's Mobs - Returning board</li>
+          </ul>
+        </CardContent>
+        <CardFooter className="text-indigo-600 text-sm font-bold">
+          See More
+        </CardFooter>
+      </Card>
+      <Card>
+        <CardHeader className=""><CardNote>November 28th</CardNote></CardHeader>
+        <CardContent>
+          <h3
+            class="font-[800] text-xxl text-gray-500 uppercase leading-6 mb-2"
+          >
+            Added Alex's Mobs
+          </h3>
+          <ul class="text-[1rem] list-[circle] ml-4">
+            <li>Added Alex's Mobs - Straddle Jump 1 2 3</li>
+            <li>Added Alex's Mobs - Lavawaxed</li>
+            <li>Added Alex's Mobs - Serpent Charmer</li>
+            <li>Added Alex's Mobs - Returning board</li>
+          </ul>
+        </CardContent>
+        <CardFooter className="text-indigo-600 text-sm font-bold">
+          See More
+        </CardFooter>
+      </Card>
+    </div>
+    <Button>View all</Button>
+  </Content>
+  <Content
+    className="bg-foreground slope slope-st-[4vw] mt-8 text-background py-32"
+  >
+    <div class="grid grid-cols-2">
+      <Image src={discord} alt="discord" />
+      <div class="vertical center-v max-w-[400px]">
+        <H2 variant={"indigo"}>DISCORD</H2>
+        <p class="mb-8">
+          If you want to see more, need help for your project or have
+          suggestion, make sure tu join my Discord where I post regular content.
+        </p>
+        <a
+          href="https://discord.gg/SHtySurd4k"
+          target="_blank"
+          class="w-[180px]"
+        >
+          <Button type="submit" variant="indigo" className="relative">
+            JOIN
+          </Button>
+        </a>
+      </div>
+    </div>
+  </Content>
+</Layout>

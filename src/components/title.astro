@@ -1,0 +1,17 @@
+---
+const { title, catchPhrase, top = null } = Astro.props;
+---
+
+<div class="text-center mb-6 mt-12 text-[#474B4F]">
+  {top && <span class="text-2xl bg-background px-4">{top}</span>}
+  <h1
+    class="text-6xl uppercase font-black border-y-2 border-[#474B4F] py-6 my-[-1rem]"
+  >
+    {title}
+  </h1>
+  {
+    catchPhrase && (
+      <span class="text-2xl bg-background px-4">{catchPhrase}</span>
+    )
+  }
+</div>

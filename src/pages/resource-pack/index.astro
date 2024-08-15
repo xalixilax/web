@@ -1,0 +1,21 @@
+---
+import Header from "@/components/title.astro";
+
+import { SearchBar } from "@/components/search-bar";
+import { Content } from "@/components/ui/content";
+import "@/styles/globals.css";
+import type { EmblaOptionsType } from "embla-carousel";
+import Layout from "../../layouts/Layout.astro";
+
+const OPTIONS: EmblaOptionsType = { loop: true };
+---
+
+<Layout title="Welcome to Astro.">
+  <Content>
+    <Header title="Resource Pack" description="Modularity at his best" />
+    <div class="d-flex align-items-center mb-4 justify-content-end">
+      <i class="fas fa-search fa-2x d-flex mx-4"></i>
+    </div>
+    <!-- <SearchBar client:load /> -->
+  </Content>
+</Layout>

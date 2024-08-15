@@ -1,0 +1,16 @@
+---
+import { H2 } from "@/components/ui/h2";
+import { marked } from "marked";
+
+const { link } = Astro.props;
+
+const response = await fetch(link);
+const markdown = await response.text();
+
+const content = marked.parse(markdown);
+
+export const prerender = false;
+---
+
+<H2 variant={"indigo"}>Changelog</H2>
+<article id="changelog" set:html={content} />

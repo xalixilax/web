@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+const { title, description } = Astro.props;
+---
+
+<footer class="mt-auto">
+  <div
+    class="py-6 bg-yellow-500 center space-x-4 [&>a]:bg-yellow-700 [&>a]:w-10 [&>a]:h-10 [&>a]:center [&>a]:rounded-sm [&>a]:text-yellow-500 text-3xl"
+  >
+    <a href="https://twitter.com/xalixilax" title="twitter">
+      <Icon name="x" />
+    </a>
+    <a href="https://www.curseforge.com/members/xalixilax/projects">
+      <Icon name="curseforge" />
+    </a>
+    <a href="https://discord.gg/SHtySurd4k">
+      <Icon name="discord" />
+    </a>
+    <a href="https://www.patreon.com/xalixilax">
+      <Icon name="patreon" />
+    </a>
+    <a href="https://www.planetminecraft.com/member/xalixilax/">
+      <Icon name="pmc" />
+    </a>
+  </div>
+  <div class="text-center p-2 bg-yellow-600">
+    © 2024 Copyright: Maxime Lefebvre
+  </div>
+</footer>
